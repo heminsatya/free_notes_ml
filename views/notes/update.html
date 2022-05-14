@@ -1,0 +1,23 @@
+{% extends 'notes/layout.html' %}
+
+{% block title %}{{consts.edit_note}}{% endblock %}
+
+{% block body %}
+    {% if not note %}
+        <h1>{{consts.note_not_exists}}</h1>
+    {% else %}
+        <h1>{{consts.edit_note}}</h1>
+        <form action="{{LANGUAGE + NOTES}}/edit-note/" method="put" class="frm-app" id="edit-note-form">
+            {{ form.csrf_token }}
+            <input type="hidden" name="id" value="{{ note.id }}">
+            <div class="form-group">
+                <input type="text" name="title" class="form-control" placeholder="*{{consts.title}}" required value="{{note.title}}">
+            </div>
+            <div class="form-group">
+                <label for="dynamic-content">*{{consts.content}}:</label>
+                <textarea name="content" class="form-control" rows="10" placeholder="*{{consts.content}}" id="dynamic-content">{{note.content}}</textarea>
+            </div>
+            <button type="submit" class="btn btn-app submit">{{consts.submit}}</button>
+        </form>
+    {% endif %}
+{% endblock %}

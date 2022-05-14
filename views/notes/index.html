@@ -1,0 +1,11 @@
+{% extends 'notes/layout.html' %}
+
+{% block title %}{{consts.free_notes}}{% endblock %}
+
+{% block body %}
+    <h1>{{consts.welcome_free_notes}}</h1>
+    <p>{{consts.online_free_notes}}</p>
+    <hr class="divider divider-gradient my-5">
+    <p>{{consts.dont_have_account}} <a href="{{LANGUAGE + USERS}}/register/" style="margin-left: 0.5rem;">{{consts.register_here}}</a></p>
+    <p>{{consts.have_account}} <a href="{{LANGUAGE + USERS}}/login/" style="margin-left: 0.5rem;">{{consts.login_here}}</a></p>
+{% endblock %}

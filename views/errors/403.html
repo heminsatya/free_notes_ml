@@ -1,0 +1,8 @@
+{% extends "errors/layout.html" %}
+
+{% block title %}{{consts.access_denied_title}}{% endblock %}
+
+{% block body %}
+    <h1>{{consts.access_denied_short}}</h1>
+    <p>{{consts.access_denied_long}}</p>
+{% endblock %}

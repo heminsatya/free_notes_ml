@@ -33,12 +33,8 @@
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{{STATICS}}/generic/styles.css">
-    <link rel="stylesheet" href="{{STATICS}}/notes/main.css">
-
-    <!-- Scripts -->
-    <script src="{{STATICS}}/generic/scripts.js"></script>
-    <script src="{{STATICS}}/notes/main.js"></script>
+    <link rel="stylesheet" href="{{STATICS}}/generic/main.css">
+    <link rel="stylesheet" href="{{STATICS}}/notes/styles.css">
 </head>
 <body>
 
@@ -60,31 +56,31 @@
                     {% if user %}
                         <ul class="navbar-nav mr-auto mt-3 mt-lg-0">
                             <li class="navbar-item">
-                                <a class="nav-link" href="{{LANGUAGE + NOTES}}/my-notes/">{{consts.my_notes}}</a>
+                                <a class="nav-link" href="{{NOTES}}/my-notes/">My Notes</a>
                             </li>
                             <li class="navbar-item">
-                                <a class="nav-link" href="{{LANGUAGE + NOTES}}/new-note/">{{consts.new_note}}</a>
+                                <a class="nav-link" href="{{NOTES}}/new-note/">New Note</a>
                             </li>
                         </ul>
 
                         <ul class="navbar-nav ml-auto">
                             <li class="navbar-item">
-                                <a class="nav-link" href="{{LANGUAGE + USERS}}/logout/">{{consts.logout}}</a>
+                                <a class="nav-link" href="{{USERS}}/logout/">Logout</a>
                             </li>
                         </ul>
                     {% else %}
                         <ul class="navbar-nav mr-auto mt-3 mt-lg-0">
                             <li class="navbar-item">
-                                <a class="nav-link active" href="{{LANGUAGE + DEFAULT_APP}}/">{{consts.home}}</a>
+                                <a class="nav-link" href="{{DEFAULT_APP}}/">Home</a>
                             </li>
                         </ul>
 
                         <ul class="navbar-nav ml-auto">
                             <li class="navbar-item">
-                                <a class="nav-link" href="{{LANGUAGE + USERS}}/">{{consts.login}}</a>
+                                <a class="nav-link" href="{{USERS}}/">Login</a>
                             </li>
                             <li class="navbar-item">
-                                <a class="nav-link" href="{{LANGUAGE + USERS}}/register/">{{consts.register}}</a>
+                                <a class="nav-link" href="{{USERS}}/register/">Register</a>
                             </li>
                         </ul>
                     {% endif %}
@@ -101,7 +97,7 @@
         <main class="main">
             {% if user %}
                 <div class="username">
-                    {{consts.username}}: <strong>{{ user.username }}</strong>
+                    Username: <strong>{{ user.username }}</strong>
                 </div>
             {% endif %}
             {% block body %}{% endblock %}
@@ -120,6 +116,9 @@
 
     <!-- Result -->
     <div id="result"></div>
-    
+
+    <!-- Scripts -->
+    <script src="{{STATICS}}/generic/main.js"></script>
+    <script src="{{STATICS}}/notes/scripts.js"></script>
 </body>
 </html>

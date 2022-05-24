@@ -1,8 +1,8 @@
 {% extends "errors/layout.html" %}
 
-{% block title %}{{consts.method_forbidden_title}}{% endblock %}
+{% block title %}405 Error{% endblock %}
 
 {% block body %}
-    <h1>{{consts.method_forbidden_short}}</h1>
-    <p>{{consts.method_forbidden_long}}</p>
+    <h1>Method Not Allowed!</h1>
+    <p>The method is not allowed for the requested URL.</p>
 {% endblock %}
